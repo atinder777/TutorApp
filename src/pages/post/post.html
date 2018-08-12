@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Post</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-item no-lines background-size id="elastic-header" [ngStyle]="{'background-image': 'url(' + post.backgroundImage + ')'}">
+    <div title-block>
+      <!--- Category -->
+      <span new-category *ngIf="category">{{category.name}}</span>
+      <!--- Parallax Title -->
+      <h1 parallax-title text-wrap>{{post.title.rendered}}</h1>
+    </div>
+  </ion-item>
+  <ion-item-group>
+    <!-- Content -->
+    <ion-item no-margin no-lines>
+      <!-- Content Title-->
+      <h2 parallax-subtitle margin-bottom text-wrap [innerHTML]="post.title.rendered"></h2>
+      <!-- Content Description-->
+      <p parallax-description text-wrap *ngIf="post.content" [innerHTML]="post.content.rendered"></p>
+    </ion-item>
+  </ion-item-group>
+</ion-content>

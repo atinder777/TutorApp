@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Blog Posts</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="refresh($event)" pullingIcon="arrow-dropdown" pullingText="Pull to refresh..." refreshingSpinner="bubbles"
+    refreshingText="Loading...">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <!-- <ion-grid no-padding *ngIf="news != null">
+    <ion-row>
+      <ion-col (tap)="openDetails(item)" [ngClass]="item.animateClass" no-padding col-12 col-md-6 *ngFor="let item of news;let i = index">
+        <ion-card background-size text-left [ngStyle]="{'background-image': 'url(' + item.backgroundImage + ')'}">
+          <div card-title [innerHTML]="item.title.rendered"></div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+  <ion-grid no-padding *ngIf="news != null">
+    <ion-row>
+      <ion-col col-12 no-padding no-margin>
+        <ion-list>
+          <ul no-margin no-padding class="collapsible">
+            <li margin *ngFor="let post of news" [ngClass]="post.animateClass">
+              <!-- Expandable Full image with CTA Header-->
+              <div class="collapsible-header" (click)="toggleGroup(post)">
+                <ion-item no-margin padding no-lines background-size [ngStyle]="{'background-image': 'url(' + post.backgroundImage + ')'}">
+                  <!-- Subtitle Card -->
+                  <h3 ion-text text-wrap text-capitalize item-subtitle *ngIf="post.date">{{post.date | date:'dd/MM/yyyy'}}</h3>
+                  <!-- Title Card -->
+                  <h2 ion-text text-wrap text-capitalize item-subtitle *ngIf="post.title" [innerHTML]="post.title.rendered"></h2>
+                  <!-- Icon And Text For Read More-->
+                  <div style="margin-left: -9px;" read-more>
+                    <ion-icon style="margin-top: -10px" icon-medium float-left name="ios-arrow-dropright"></ion-icon>
+                    <div margin-top7>Details</div>
+                  </div>
+                </ion-item>
+              </div>
+              <!-- Expandable Full image with CTA Body -->
+              <div class="item-accordion" [ngClass]="{'active': isGroupShown(post) }" [hidden]="!isGroupShown(post)">
+                <ion-item text-wrap no-lines>
+                  <!-- Icon Rating Star -->
+                  <!-- <ion-icon float-left *ngFor="let item of group.expandItems.iconsStars;let i = index" (click)="onStarClass(group.expandItems.iconsStars, i, $event);">
+                                          <i icon-small *ngIf="item.isActive" class="icon {{item.iconActive}}"></i>
+                                          <i icon-small *ngIf="!item.isActive" class="icon {{item.iconInactive}}"></i>
+                                      </ion-icon> -->
+                  <!-- Reviews Star -->
+                  <!-- <span span-small>{{group.expandItems.reviews}}</span> -->
+                  <div (click)="openPost(post)">
+                    <!-- Titile -->
+                    <h2 margin-top subitem-title [innerHTML]="post.title.rendered"></h2>
+                    <!-- Description -->
+                    <p subitem-subtitle [innerHTML]="post.excerpt.rendered"></p>
+                    <div style="margin-left: -9px;" read-more>
+                      <ion-icon style="margin-top: -10px" icon-medium float-left name="ios-arrow-dropright"></ion-icon>
+                      <span span-medium>Read more</span>
+                    </div>
+                  </div>
+                </ion-item>
+              </div>
+            </li>
+          </ul>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-infinite-scroll [enabled]="morePagesAvailable" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading More...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
