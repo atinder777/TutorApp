@@ -1,8 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { OneSignal } from "@ionic-native/onesignal";
-import { LoadingController, Nav, App, Events } from "ionic-angular";
-import { HomePage } from "../../pages/home/home";
+import { App, Events } from "ionic-angular";
 import { ServiceProvider } from "../service/service";
 
 /*
