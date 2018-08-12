@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { NavController, LoadingController } from "ionic-angular";
+import { NavController, LoadingController, Events } from "ionic-angular";
 import { ServiceProvider } from "../../providers/service/service";
 
 @Component({
@@ -14,9 +14,15 @@ export class HomePage {
 	constructor(
 		public navCtrl: NavController,
 		private serviceProvider: ServiceProvider,
-		private loadingController: LoadingController
+		private loadingController: LoadingController,
+		private event: Events
 	) {
 		this.openPosts();
+		this.event.subscribe("push:handle", post => {
+			console.log(post);
+
+			this.navCtrl.push("PostPage", { post: post });
+		});
 	}
 
 	private openPosts() {

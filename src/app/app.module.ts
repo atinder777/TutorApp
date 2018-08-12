@@ -11,6 +11,7 @@ import { MenuProvider } from "../providers/menu/menu";
 import { ServiceProvider } from "../providers/service/service";
 import { HttpClientModule } from "@angular/common/http";
 import { EmailComposer } from "@ionic-native/email-composer";
+import { PushProvider } from '../providers/push/push';
 
 @NgModule({
 	declarations: [MyApp, HomePage],
@@ -23,7 +24,8 @@ import { EmailComposer } from "@ionic-native/email-composer";
 		SplashScreen,
 		{ provide: ErrorHandler, useClass: IonicErrorHandler },
 		MenuProvider,
-		ServiceProvider
+		ServiceProvider,
+    PushProvider
 	]
 })
 export class AppModule {}

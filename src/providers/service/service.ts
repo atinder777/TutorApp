@@ -32,6 +32,20 @@ export class ServiceProvider {
 		return this.http.get(`${URL_API}/bookingsapp?categories=${cat}&per_page=${limit}&offset=${offset}`);
 	}
 
+	/**
+	 *
+	 * @param id
+	 * @description returns the post from a given post id.
+	 * @returns {Object}
+	 */
+	getPostById(id: number) {
+		return this.http.get(`${URL_API}/posts/${id}?_embed`);
+	}
+
+	/**
+	 *
+	 * @param id category ID
+	 */
 	getCategory(id: number) {
 		return this.http.get(`${URL_API}/categories/${id}`);
 	}
