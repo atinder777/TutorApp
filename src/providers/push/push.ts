@@ -20,8 +20,8 @@ export class PushProvider {
 		private event: Events,
 		private serviceProvider: ServiceProvider
 	) {
-		// this.oneSignal.startInit("1beee6c8-9de3-4c9d-891f-af91442ed363", "643738807215"); // Tests
-		this.oneSignal.startInit("20cba525-2645-45f3-93f2-c4f5ee8d2310", "777551882937"); // Production
+		this.oneSignal.startInit("1beee6c8-9de3-4c9d-891f-af91442ed363", "643738807215"); // Tests
+		// this.oneSignal.startInit("20cba525-2645-45f3-93f2-c4f5ee8d2310", ""); // Production
 		this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
 		this.oneSignal.handleNotificationReceived().subscribe(res => {
 			console.log(res);

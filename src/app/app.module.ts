@@ -11,7 +11,8 @@ import { MenuProvider } from "../providers/menu/menu";
 import { ServiceProvider } from "../providers/service/service";
 import { HttpClientModule } from "@angular/common/http";
 import { EmailComposer } from "@ionic-native/email-composer";
-import { PushProvider } from '../providers/push/push';
+import { PushProvider } from "../providers/push/push";
+import { OneSignal } from "@ionic-native/onesignal";
 
 @NgModule({
 	declarations: [MyApp, HomePage],
@@ -19,13 +20,14 @@ import { PushProvider } from '../providers/push/push';
 	bootstrap: [IonicApp],
 	entryComponents: [MyApp, HomePage],
 	providers: [
+		OneSignal,
 		EmailComposer,
 		StatusBar,
 		SplashScreen,
 		{ provide: ErrorHandler, useClass: IonicErrorHandler },
 		MenuProvider,
 		ServiceProvider,
-    PushProvider
+		PushProvider
 	]
 })
 export class AppModule {}
