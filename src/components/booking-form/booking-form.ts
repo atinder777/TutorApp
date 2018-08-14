@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "../../../node_modules/@angular/forms";
 import { NavController, NavParams } from "../../../node_modules/ionic-angular";
 import { EmailComposer } from "../../../node_modules/@ionic-native/email-composer";
+import { AngularFireDatabase } from "../../../node_modules/angularfire2/database";
 
 /**
  * Generated class for the BookingFormComponent component.
@@ -21,7 +22,8 @@ export class BookingFormComponent {
 		public navCtrl: NavController,
 		public navParams: NavParams,
 		private email: EmailComposer,
-		private fb: FormBuilder
+		private fb: FormBuilder,
+		private db: AngularFireDatabase
 	) {
 		this.myForm = this.fb.group({
 			name: [null, Validators.compose([Validators.required])],
@@ -35,6 +37,10 @@ export class BookingFormComponent {
 	}
 
 	sendEmail(val) {
+		this.db.list("bookings").push({
+			name: val.name,
+			phone: val.phone
+		});
 		console.log(val);
 		let email = {
 			app: "gmail",
@@ -43,6 +49,9 @@ export class BookingFormComponent {
 			body: `Name: ${val.name}<br> Phone: ${val.phone}`,
 			isHtml: true
 		};
-		this.email.open(email);
+		this.email.open(email).then(res => {
+			val.name = "";
+			val.phone = "";
+		});
 	}
 }
