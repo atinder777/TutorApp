@@ -38,7 +38,7 @@ export class HomePage {
 				setTimeout(function() {
 					that.bookings.push(val);
 					// val.backgroundImage = val.better_featured_image.source_url;
-					val.backgroundImage = "https://images7.alphacoders.com/856/856246.png";
+					val.backgroundImage = "assets/imgs/class_holder.jpg";
 					that.bookings[i].animateClass = { "fade-in-left-item": true };
 				}, 200 * i);
 			});
@@ -61,7 +61,7 @@ export class HomePage {
 				tmpArray.forEach((val, i) => {
 					setTimeout(function() {
 						that.bookings.push(val);
-						val.backgroundImage = "https://images7.alphacoders.com/856/856246.png";
+						val.backgroundImage = "assets/imgs/class_holder.jpg";
 						// val.backgroundImage = val.better_featured_image.source_url;
 						that.bookings[i].animateClass = { "fade-in-left-item": true };
 					}, 200 * i);

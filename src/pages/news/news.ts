@@ -33,7 +33,7 @@ export class NewsPage {
 				let tmpArray: any = [];
 				tmpArray = res;
 				tmpArray.forEach((val, i) => {
-					val.backgroundImage = "https://images7.alphacoders.com/856/856246.png";
+					val.backgroundImage = "assets/imgs/class_holder.jpg";
 					setTimeout(function() {
 						that.news.push(val);
 						// val.backgroundImage = val.better_featured_image.source_url;
@@ -65,7 +65,7 @@ export class NewsPage {
 					setTimeout(function() {
 						that.news.push(val);
 						// val.backgroundImage = val.better_featured_image.source_url;
-						val.backgroundImage = "https://images7.alphacoders.com/856/856246.png";
+						val.backgroundImage = "assets/imgs/class_holder.jpg";
 						that.news[i].animateClass = { "fade-in-left-item": true };
 					}, 200 * i);
 				});
@@ -97,7 +97,7 @@ export class NewsPage {
 						console.log(i, val);
 
 						that.news.push(val);
-						val.backgroundImage = "https://images7.alphacoders.com/856/856246.png";
+						val.backgroundImage = "assets/imgs/class_holder.jpg";
 						// val.backgroundImage = val.better_featured_image.source_url;
 						that.news[i].animateClass = { "fade-in-left-item": true };
 					});

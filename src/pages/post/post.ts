@@ -32,7 +32,7 @@ export class PostPage {
 		}
 
 		if (this.post.better_featured_image === null) {
-			this.post.backgroundImage = "https://images7.alphacoders.com/856/856246.png";
+			this.post.backgroundImage = "assets/imgs/class_holder.jpg";
 		} else {
 			this.post.backgroundImage = this.post.better_featured_image.source_url;
 		}

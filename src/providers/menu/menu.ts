@@ -15,7 +15,7 @@ export class MenuProvider {
 	getdataSideMenu() {
 		return {
 			// background: "assets/images/training_for_farmers.jpg",
-			background: "http://via.placeholder.com/350x350",
+			background: "assets/imgs/class_holder.jpg",
 			image: "assets/icon/icon.png",
 			title: "Tutor App",
 			description: "Here you can find knowledge"
