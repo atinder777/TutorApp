@@ -8,32 +8,8 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-segment [(ngModel)]="category" (ionChange)="changeSegment($event)">
-    <ion-segment-button value="16">
-      MECH Courses
-    </ion-segment-button>
-    <ion-segment-button value="17">
-      ENGR Courses
-    </ion-segment-button>
-  </ion-segment>
-  <ion-refresher (ionRefresh)="refresh($event)" pullingIcon="arrow-dropdown" pullingText="pull to refresh" refreshingSpinner="bubbles"
-    refreshingText="Refreshing...">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
-  <ion-grid no-padding *ngIf="bookings != null">
-    <ion-row>
-      <ion-col (tap)="openDetails(item)" [ngClass]="item.animateClass" no-padding col-12 col-md-6 *ngFor="let item of bookings;let i = index">
-        <ion-card background-size text-left [ngStyle]="{'background-image': 'url(' + item.backgroundImage + ')'}">
-          <!-- Card Title-->
-          <div card-title text-wrap [innerHTML]="item.title.rendered"></div>
-          <!-- Card Subtitle-->
-          <!-- <div text-wrap card-subtitle [innerHTML]="item.content.rendered"></div> -->
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-infinite-scroll [enabled]="morePagesAvailable" (ionInfinite)="doInfinite($event)">
-    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more...">
-    </ion-infinite-scroll-content>
-  </ion-infinite-scroll>
+  <ion-tabs>
+    <ion-tab [root]="tab1Root" tabTitle="Blog"></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="Bookings"></ion-tab>
+  </ion-tabs>
 </ion-content>

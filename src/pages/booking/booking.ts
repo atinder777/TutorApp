@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { BookingFormComponent } from "../../components/booking-form/booking-form";
 
 /**
  * Generated class for the BookingPage page.

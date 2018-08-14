@@ -5,7 +5,7 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 
 import { HomePage } from "../pages/home/home";
 import { MenuProvider } from "../providers/menu/menu";
-import { PushProvider } from "../providers/push/push";
+// import { PushProvider } from "../providers/push/push";
 
 @Component({
 	templateUrl: "app.html"
@@ -22,21 +22,20 @@ export class MyApp {
 	constructor(
 		public platform: Platform,
 		public statusBar: StatusBar,
-		public splashScreen: SplashScreen,
-		private pushProvider: PushProvider
+		public splashScreen: SplashScreen // private pushProvider: PushProvider
 	) {
 		this.initializeApp();
 		// used for an example of ngFor and navigation
 		this.params = this.menuProvider.getdataSideMenu();
 		this.pages = [
-			{ title: "Booking", component: HomePage, icon: "icon-home" },
-			{ title: "Blog Posts", component: "NewsPage", icon: "icon-newspaper" }
+			{ title: "Home", component: HomePage, icon: "icon-home" }
+			// { title: "Blog", component: "NewsPage", icon: "icon-newspaper" }
 		];
 	}
 
 	initializeApp() {
 		this.platform.ready().then(() => {
-			this.pushProvider.enablePush();
+			// this.pushProvider.enablePush();
 			// Okay, so the platform is ready and our plugins are available.
 			// Here you can do any higher level native things you might need.
 			this.statusBar.styleDefault();

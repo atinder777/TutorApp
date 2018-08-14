@@ -32,5 +32,13 @@ page-home {
 		-moz-animation: fadeInLeft 800ms;
 		-o-animation: fadeInLeft 800ms;
 		animation: fadeInLeft 800ms;
-	}
+    }
+    ion-segment {
+        padding: 1px;
+    }
+    ion-segment-button {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    
 }

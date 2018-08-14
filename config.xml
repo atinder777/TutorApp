@@ -84,4 +84,5 @@
     <plugin name="cordova-plugin-email-composer" spec="^0.8.15" />
     <allow-navigation href="http://192.168.0.37:8100" />
     <engine name="android" spec="6.4.0" />
+    <allow-navigation href="http://192.168.43.88:8100" />
 </widget>

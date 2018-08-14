@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams, LoadingController } from "ionic-angular";
+import { IonicPage, NavController, NavParams, LoadingController, Nav } from "ionic-angular";
 import { ServiceProvider } from "../../providers/service/service";
 
 /**
@@ -19,7 +19,7 @@ export class NewsPage {
 	morePagesAvailable: boolean = true;
 
 	constructor(
-		public navCtrl: NavController,
+		public navCtrl: Nav,
 		public navParams: NavParams,
 		private serviceProvider: ServiceProvider,
 		private loadingController: LoadingController

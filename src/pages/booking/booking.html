@@ -31,32 +31,32 @@
     <ion-list>
       <ion-item>
         <p parallax-description text-wrap *ngIf="data.weekly" [innerHTML]="data.weekly"></p>
-        <div margin text-center>
-          <button ion-button (tap)="goForm()">Get in touch</button>
-        </div>
       </ion-item>
     </ion-list>
+    <div margin>
+      <booking-form></booking-form>
+    </div>
   </div>
   <!-- Crash -->
   <div *ngIf="type == '2'">
     <ion-list>
       <ion-item>
         <p parallax-description text-wrap *ngIf="data.weekly" [innerHTML]="data.weekly"></p>
-        <div margin text-center>
-          <button ion-button (tap)="goForm()">Get in touch</button>
-        </div>
       </ion-item>
     </ion-list>
+    <div margin>
+      <booking-form></booking-form>
+    </div>
   </div>
   <!-- Courses -->
   <div *ngIf="type == '3'">
     <ion-list>
       <ion-item>
         <p parallax-description text-wrap *ngIf="data.private" [innerHTML]="data.private"></p>
-        <div margin text-center>
-          <button ion-button (tap)="goForm()">Get in touch</button>
-        </div>
       </ion-item>
     </ion-list>
+    <div margin>
+      <booking-form></booking-form>
+    </div>
   </div>
 </ion-content>

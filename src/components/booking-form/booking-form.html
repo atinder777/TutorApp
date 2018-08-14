@@ -1,0 +1,35 @@
+<ion-row>
+  <ion-col>
+    <h2 text-center>Book</h2>
+    <form [formGroup]="myForm" (ngSubmit)="sendEmail(myForm.value)">
+      <ion-list>
+
+        <ion-item>
+          <ion-label floating>Name</ion-label>
+          <ion-input name="name" formControlName="name" type="text"></ion-input>
+        </ion-item>
+        <br>
+        <div class="error-box" *ngIf="myForm.controls['name'].hasError('required') && myForm.controls['name'].touched">Name is a required field.</div>
+
+        <ion-item>
+          <ion-label floating>Phone</ion-label>
+          <ion-input name="phone" formControlName="phone" type="text"></ion-input>
+        </ion-item>
+        <br>
+        <div class="error-box" *ngIf="myForm.controls['phone'].hasError('required') && myForm.controls['phone'].touched">Phone is a required field.</div>
+
+        <!-- <ion-item>
+                  <ion-label floating>{{'feedback.feedback-message'| translate}}</ion-label>
+                  <ion-textarea rows="5" name="message" formControlName="message" type="text"></ion-textarea>
+                </ion-item>
+                <br>
+                <div class="error-box" *ngIf="myForm.controls['message'].hasError('required') && myForm.controls['message'].touched">{{'form-validations.message-required' | translate}}</div> -->
+
+        <div margin text-center>
+
+          <button type="submit" [disabled]="!myForm.valid" ion-button>Send</button>
+        </div>
+      </ion-list>
+    </form>
+  </ion-col>
+</ion-row>
