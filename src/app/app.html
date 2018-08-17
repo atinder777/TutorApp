@@ -18,6 +18,25 @@
           </ion-icon>
           {{p.title}}
         </button>
+
+        <ion-item style="height: 50px" item-title no-lines border *ngIf="data.isChecked != null" border no-lines>
+          <!-- Item-title -->
+
+          <ion-label style="overflow: initial" item-title item-start>
+            <ion-icon style="margin-right: 10px" icon-small item-left>
+              <i class="icon icon-bell-ring"></i>
+            </ion-icon>
+            Notifications
+          </ion-label>
+          <!-- Toggle -->
+          <ion-toggle item-end (ionChange)="onEvent(data)" [checked]="data.isChecked"></ion-toggle>
+        </ion-item>
+        <button menuClose ion-item item-title main-menu no-lines border (click)="close()">
+          <ion-icon icon-small item-left>
+            <i class="icon icon-exit-to-app"></i>
+          </ion-icon>
+          Exit
+        </button>
       </ion-list>
     </ion-content>
   </ion-menu>

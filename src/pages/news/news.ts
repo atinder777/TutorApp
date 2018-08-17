@@ -24,7 +24,7 @@ export class NewsPage {
 		private serviceProvider: ServiceProvider,
 		private loadingController: LoadingController
 	) {
-		let loader = this.loadingController.create({ content: "Carregando...", duration: 10000 });
+		let loader = this.loadingController.create({ content: "Loading...", duration: 10000 });
 		loader.present();
 		let that = this;
 		this.serviceProvider.getNews(4, 0).subscribe(
@@ -51,7 +51,7 @@ export class NewsPage {
 	refresh(refresh) {
 		this.morePagesAvailable = true;
 		this.news = [];
-		let loader = this.loadingController.create({ content: "Carregando...", duration: 10000 });
+		let loader = this.loadingController.create({ content: "Loading...", duration: 10000 });
 		loader.present();
 		let that = this;
 		this.serviceProvider.getNews(4, 0).subscribe(

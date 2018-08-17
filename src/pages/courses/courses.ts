@@ -73,7 +73,11 @@ export class CoursesPage {
 				tmpArray.forEach((val, i) => {
 					setTimeout(function() {
 						that.bookings.push(val);
-						// val.backgroundImage = val.better_featured_image.source_url;
+						if (val.better_featured_image != null) {
+							val.backgroundImage = val.better_featured_image.source_url;
+						} else {
+							val.backgroundImage = IMAGE_PLACEHOLDER;
+						}
 						that.bookings[i].animateClass = { "fade-in-left-item": true };
 					}, 200 * i);
 				});
@@ -129,10 +133,6 @@ export class CoursesPage {
 	}
 
 	changeSegment(event) {
-		console.log(event);
-
-		console.log(this.category);
-
 		this.openPosts();
 	}
 }

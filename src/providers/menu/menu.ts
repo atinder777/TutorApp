@@ -9,16 +9,15 @@ import { Injectable } from "@angular/core";
 @Injectable()
 export class MenuProvider {
 	constructor() {
-		console.log("Hello MenuProvider Provider");
+		// console.log("Hello MenuProvider Provider");
 	}
 
 	getdataSideMenu() {
 		return {
-			// background: "assets/images/training_for_farmers.jpg",
 			background: "assets/imgs/class_holder.jpg",
 			image: "assets/icon/icon.png",
-			title: "Tutor App",
-			description: "Here you can find knowledge"
+			title: "Mechtutoring",
+			description: "Helping you learn"
 		};
 	}
 }

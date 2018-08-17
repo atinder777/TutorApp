@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.mechtutoring" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>MechTutoring</name>
     <description>MechTutoring Course Booking App</description>
     <author email="parv@mechtutoring.com" href="https://mechtutoring.com/">Parv</author>
@@ -83,6 +83,6 @@
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-plugin-email-composer" spec="^0.8.15" />
     <allow-navigation href="http://192.168.0.37:8100" />
-    <engine name="android" spec="6.4.0" />
     <allow-navigation href="http://192.168.43.88:8100" />
+    <engine name="android" spec="6.4.0" />
 </widget>

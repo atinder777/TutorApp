@@ -16,6 +16,7 @@ import { OneSignal } from "@ionic-native/onesignal";
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/database";
 import { FIREBASE_CONFIG } from "../conts/main";
+import { NativeStorage } from "@ionic-native/native-storage";
 
 @NgModule({
 	declarations: [MyApp, HomePage],
@@ -29,6 +30,7 @@ import { FIREBASE_CONFIG } from "../conts/main";
 	bootstrap: [IonicApp],
 	entryComponents: [MyApp, HomePage],
 	providers: [
+		NativeStorage,
 		AngularFireDatabase,
 		OneSignal,
 		EmailComposer,
